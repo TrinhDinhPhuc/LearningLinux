@@ -22,3 +22,25 @@ do
 
 done
 echo $s
+echo "Sap xep tang dan: "
+for (( i = 0; i < $(($n-1)) ; i++ ))
+do
+   for (( j = $i; j < $n; j++ ))
+   do
+
+      if [[ ${arr[$i]} -gt ${arr[$j]} ]]
+      then
+
+       t=${arr[$i]}
+       arr[$i]=${arr[$j]}
+       arr[$j]=$t
+      fi
+   done
+done
+
+echo "Day sap xep tang dan:"
+for (( i = 0; i < $n ; i++ ))
+do
+echo -n "${arr[$i]} 	"
+done
+echo
